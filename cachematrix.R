@@ -70,7 +70,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
         ## Retrieve the inverse matrix from the cache
         mInverse <- x$getInverse()
-        if(!is.na(mInverse[1,1])) {
+        if(!any(is.na(mInverse))) {
                 message("getting cached data")
                 return(mInverse)
         }
